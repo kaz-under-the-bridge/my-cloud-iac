@@ -8,4 +8,5 @@
 - [mock-alert-notifier](https://github.com/kaz-under-the-bridge/mock-alert-notifier)
 
 ## ToDo
-- CDKTFでtfを描画して管理するようにする(CDKTFの勉強がてら)
+- [] CDKTFでtfを描画して管理するようにする(CDKTFの勉強がてら)
+- [] google provider versionを5.x系にする
