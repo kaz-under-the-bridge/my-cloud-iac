@@ -8,14 +8,25 @@ locals {
 
   role_bindings = [
     {
-      name = "test-kaz-under-the-bridge"
+      //変更マシンには管理権限を
+      name = "cicd-machine-account(Terraform Cloud)"
       roles = [
         "roles/editor",
         "roles/resourcemanager.projectIamAdmin",
       ]
       members = [
-        "user:kaz@under-the-bridge.work",
         "serviceAccount:tfc-wi@test-kaz-under-the-bridge.iam.gserviceaccount.com"
+      ]
+    },
+    {
+      //人には弱めの権限を(必要に応じて管理権限を狭いスコープで都度付与する)
+      name = "sre"
+      roles = [
+        "roles/viewer",
+        "roles/resourcemanager.projectIamAdmin",
+      ]
+      members = [
+        "user:kaz@under-the-bridge.work",
       ]
     }
   ]
